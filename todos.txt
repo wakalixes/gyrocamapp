@@ -1,0 +1,4 @@
+TODOs:
+
+-) option: screen brightness automatically highest
+-) 

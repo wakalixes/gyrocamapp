@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layout_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" >
+		
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:baselineAligned="true"
+	        android:orientation="horizontal" >
+	                
+		    <CheckBox
+		        android:id="@+id/cb_ScreenUse"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="keep screen on"
+		        android:onClick="uiKeepScreenOn"/>
+		    
+		    <CheckBox
+		        android:id="@+id/cb_ScreenLandscape"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="landscape mode"
+		        android:onClick="uiKeepScreenLandscape"/>
+		    
+		</LinearLayout>
+	
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+	
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+	
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:baselineAligned="true"
+	                android:orientation="horizontal" >
+	
+	                <Switch
+	                    android:id="@+id/sw_UseGps"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center"
+	                    android:onClick="uiActivateGps"
+	                    android:text="use GPS" />
+	
+	                <ProgressBar
+	                    android:id="@+id/pb_ScanGps"
+	                    style="?android:attr/progressBarStyleSmall"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center_vertical" />
+	
+	                <TextView
+	                    android:id="@+id/tv_GpsStatus"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center_vertical"
+	                    android:layout_marginLeft="6dp"
+	                    android:text="scanning..." />
+	
+	                <TextView
+	                    android:id="@+id/tv_GpsSats"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center_vertical"
+	                    android:layout_marginLeft="6dp"
+	                    android:text="4/4" />
+	            </LinearLayout>
+	
+	            <TextView
+	                android:id="@+id/tv_GpsCoord"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="N 00°00&apos;00&apos;&apos;, E 00°00&apos;00&apos;&apos;" />
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content" >
+	
+	            <Button
+	                android:id="@+id/bt_StartLogging"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="left"
+	                android:text="start logging" />
+	
+	            <Button
+	                android:id="@+id/bt_ResetGyro"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="right"
+	                android:onClick="uiResetKalman"
+	                android:text="reset kalman" />
+	
+	        </LinearLayout>
+	
+	    </LinearLayout>
+	
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+	
+	        <TextView
+	            android:id="@+id/tv_AngleAcc"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="angle_acc:"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        <TextView
+	            android:id="@+id/tv_AngleGyr"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="angle_gyr:"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        <TextView
+	            android:id="@+id/tv_AngleKal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="angle_kal:"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    </LinearLayout>
+	    
+	    <RelativeLayout
+	        android:id="@+id/layout_draw"
+			android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+	        
+			<View
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/angledraw"/>
+			
+		</RelativeLayout>
+	
+	</LinearLayout>
+
+</LinearLayout>
